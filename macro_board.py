@@ -14,7 +14,7 @@ def connect_serial():
 	print(f'Connecting to Arduino over Serial @ {baudrate} Baud...')
 	
 	# connect
-	arduino = serial.Serial(port, baudrate, timeout)
+	arduino = serial.Serial(port=serial_port, baudrate, timeout=serial_timeout)
 
 	arduino.write('CONNECTED')
 	print('Connected')
