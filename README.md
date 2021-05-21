@@ -7,6 +7,7 @@ Utility for managing an OBS stream, remotely.
  - Stopwatch for whole stream
  - Remote access from web browser
  - Basic ESP32-based remote control to allow speaker or presenter to request different scenes 
+ - Support for Arduino-based macro board
 
 ## Documentation
 Nothing here yet, I'll provide a link once it is finished.
