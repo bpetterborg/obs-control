@@ -56,5 +56,10 @@ namespace obs_control
         {
 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
