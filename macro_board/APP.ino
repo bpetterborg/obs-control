@@ -32,7 +32,7 @@ int digitalOutputPins[] =
 void setup()
 {
 	Serial.begin(9600); // start serial
-	Serial.write('CONNECTED);
+	Serial.write('CONNECTED');
 	
 	// setup pins (digital inputs)
 	for(int i = 0; i < sizeof(digitalInputPins) / sizeof(digitalInputPins[0]); i++)
