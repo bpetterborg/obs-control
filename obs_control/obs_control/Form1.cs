@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO.Ports; // may need to import this
+using System.Net.Http; // for talking to the http api
 
 namespace obs_control
 {
