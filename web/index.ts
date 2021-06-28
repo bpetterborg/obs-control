@@ -28,7 +28,7 @@ obs.connect({
     })
     
 	.then(() => {
-        console.log(`Successfully connected and authenticated`);
+        console.log(`OBSWS: Successfully connected and authenticated`);
  
         return obs.send('GetSceneList');
     })
@@ -38,23 +38,20 @@ obs.connect({
     });
  
 obs.on('SwitchScenes', data => {
-    console.log(`New Active Scene: ${data.sceneName}`);
+    console.log(`OBSWS: New Active Scene: ${data.sceneName}`);
 });
  
 // You must add this handler to avoid uncaught exceptions.
 obs.on('error', err => {
-    console.error('socket error:', err);
+    console.error('OBSWS: socket error:', err);
 });
 
 
-
-
-/*
 // webapp stuff
 app.get('/', (req, res) => {
 	res.send('Stream Controller');
 });
 
 app.listen(port, () => {
-	console.log(`Listening at localhost:${port}`);
-});*/
+	console.log(`Webapp: Listening at localhost:${port}`);
+});
