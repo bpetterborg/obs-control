@@ -48,14 +48,5 @@ obs.on('error', err => {
 });
 
 
-// webapp stuff
-app.get('/', (req, res, next) => {
-    res.sendFile(__dirname + '/index.html');
-});
-
-
-app.listen(port, () => {
-	console.log(`Webapp: Listening at localhost:${port}`);
-});
 
 
