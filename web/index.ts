@@ -7,6 +7,7 @@
  * 	
  */
 
+
 // imports
 const OBSWebSocket = require('obs-websocket-js');
 const express = require('express');
@@ -21,37 +22,40 @@ var obs_url = 'localhost:4444';
 var obs_password = fs.readFileSync('obs_password', 'utf8');
 
 // connect to obs server
-
 obs.connect({
-		address: obs_url,
+        address: obs_url,
         password: obs_password
     })
     
-	.then(() => {
+    .then(() => {
         console.log(`OBSWS: Successfully connected and authenticated`);
- 
+
         return obs.send('GetSceneList');
     })
     
     .catch(err => { // Promise convention dicates you have a catch on every chain.
         console.log(err);
     });
- 
+
+
 obs.on('SwitchScenes', data => {
     console.log(`OBSWS: New Active Scene: ${data.sceneName}`);
 });
- 
-// You must add this handler to avoid uncaught exceptions.
+
+// for handling uncaught exceptions
 obs.on('error', err => {
     console.error('OBSWS: socket error:', err);
 });
 
 
 // webapp stuff
-app.get('/', (req, res) => {
-	res.send('Stream Controller');
+app.get('/', (req, res, next) => {
+    res.sendFile(__dirname + '/index.html');
 });
+
 
 app.listen(port, () => {
 	console.log(`Webapp: Listening at localhost:${port}`);
 });
+
+
